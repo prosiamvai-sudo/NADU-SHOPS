@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<title><data:blog.pageTitle/></title>
+
+<b:skin><![CDATA[
+:root {
+  --primary: #16834f;
+  --primary-dark: #105e39;
+  --accent: #f97316;
+  --accent-dark: #ea580c;
+  --text: #1f2937;
+  --bg: #f3f4f6;
+  --white: #ffffff;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* Topbar */
+.topbar {
+  background: #16834f;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+/* Header & Navigation */
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px 20px;
+}
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.3px;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.nav-menu a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.nav-menu a:hover { color: var(--primary); }
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.action-btn {
+  background: #f3f6f4;
+  border: 1px solid var(--border);
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.badge-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 50%;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.search {
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 210px;
+  font-size: 14px;
+  outline: none;
+}
+.search:focus { border-color: var(--primary); }
+.search-btn {
+  padding: 9px 16px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.search-btn:hover { background: var(--primary-dark); }
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #123c2b 0%, #16834f 100%);
+  color: var(--white);
+  padding: 55px 20px;
+  text-align: center;
+}
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 14px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.hero p {
+  font-size: 17px;
+  margin-bottom: 24px;
+  opacity: 0.95;
+  line-height: 1.7;
+}
+.btn {
+  background: var(--white);
+  color: var(--primary);
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-weight: 700;
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+.btn:hover { transform: translateY(-2px); }
+
+/* Container & Section Title */
+.container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+.section-title {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary);
+  padding-left: 12px;
+  color: var(--text);
+}
+
+/* Category Cards Grid (PC + Mobile Perfect) */
+.categories-section {
+  max-width: 1200px;
+  margin: 28px auto 10px;
+  padding: 0 20px;
+}
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.category-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+.category-card:hover {
+  border-color: var(--primary);
+  background: #effaf3;
+  transform: translateY(-3px);
+}
+.category-card span {
+  font-size: 30px;
+  line-height: 1;
+}
+.category-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Product Grid & Cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.product-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+.product-thumb-link {
+  display: block;
+  overflow: hidden;
+  background: #f9fafb;
+}
+.product-thumb {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.product-card:hover .product-thumb { transform: scale(1.03); }
+.product-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.product-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.product-badge {
+  background: #e5f5eb;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+.product-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.product-title:hover { color: var(--primary); }
+.product-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+.card-btn {
+  flex: 1;
+  padding: 9px 8px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+.btn-details {
+  background: #ffedd5;
+  color: #c2410c;
+}
+.btn-details:hover { background: #fed7aa; }
+.btn-buy {
+  background: var(--primary);
+  color: var(--white);
+}
+.btn-buy:hover { background: var(--primary-dark); }
+
+/* Empty State & Pager */
+.empty-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #4b5563;
+}
+.pager {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.pager a {
+  background: var(--primary);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.pager a:hover { background: var(--primary-dark); }
+
+/* Individual Post / Product Details Page */
+.post-container {
+  background: var(--white);
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.post-detail-top {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+.post-detail-img {
+  width: 100%;
+  max-height: 430px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.post-title-main {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 8px 0 14px;
+  color: var(--text);
+  line-height: 1.35;
+}
+.post-detail-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 18px;
+}
+.post-detail-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.post-body {
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+
+/* Sidebar Widgets */
+.sidebar-widgets {
+  margin-top: 35px;
+  background: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+/* Green Footer */
+footer {
+  background: #16834f;
+  color: #ffffff;
+  padding: 45px 20px 25px;
+  margin-top: 50px;
+}
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #e8f7ee;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: #e8f7ee;
+}
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.22);
+  padding-top: 18px;
+  text-align: center;
+  font-size: 13px;
+  color: #e8f7ee;
+}
+
+/* Floating Auto-Reply Chat */
+.chat-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: #1ea952;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.24);
+  cursor: pointer;
+  z-index: 1100;
+  border: none;
+  transition: transform 0.25s;
+}
+.chat-float-btn:hover { transform: scale(1.08); background: #15873f; }
+
+.chat-popup {
+  position: fixed;
+  bottom: 88px;
+  right: 20px;
+  width: 310px;
+  max-width: calc(100vw - 32px);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+  overflow: hidden;
+  z-index: 1100;
+  display: none;
+  border: 1px solid #e5ece7;
+}
+.chat-popup.open { display: block; }
+.chat-header {
+  background: #16834f;
+  color: #fff;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat-header h4 { font-size: 15px; margin: 0; }
+.chat-header small { font-size: 11px; opacity: 0.9; display: block; }
+.chat-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 19px;
+  cursor: pointer;
+}
+.chat-body {
+  padding: 14px;
+  background: #f4f8f5;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-msg-bot {
+  background: #fff;
+  color: #222;
+  padding: 10px 12px;
+  border-radius: 10px 10px 10px 2px;
+  font-size: 13px;
+  line-height: 1.5;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.chat-msg-user {
+  background: #dcf8c6;
+  color: #222;
+  padding: 9px 12px;
+  border-radius: 10px 10px 2px 10px;
+  font-size: 13px;
+  align-self: flex-end;
+}
+.chat-footer {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+.chat-footer input {
+  flex: 1;
+  padding: 9px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 13px;
+  outline: none;
+}
+.chat-footer button {
+  background: #16834f;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.chat-footer button:hover { background: #105e39; }
+
+/* Responsive Breakpoints (Tablet & Phone) */
+@media (max-width: 992px) {
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
+  .categories-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-container { padding: 12px 15px; gap: 10px; }
+  .logo { font-size: 22px; }
+  .nav-menu { display: none; }
+  .header-actions { width: 100%; justify-content: space-between; }
+  .search-box { flex: 1; }
+  .search { width: 100%; flex: 1; }
+
+  .hero { padding: 38px 16px; }
+  .hero h1 { font-size: 26px; }
+  .hero p { font-size: 15px; }
+
+  .categories-section { padding: 0 14px; margin-top: 20px; }
+  .categories-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .category-card { padding: 12px 4px; border-radius: 8px; }
+  .category-card span { font-size: 24px; }
+  .category-card h3 { font-size: 12px; }
+
+  .container { padding: 0 14px; margin: 22px auto; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .product-thumb { height: 165px; }
+  .product-info { padding: 11px; }
+  .product-title { font-size: 14px; }
+  .product-price { font-size: 14px; margin-bottom: 8px; }
+  .card-actions { flex-direction: column; gap: 6px; }
+  .card-btn { padding: 8px 6px; font-size: 12px; }
+
+  .post-container { padding: 16px; }
+  .post-detail-top { grid-template-columns: 1fr; gap: 18px; }
+  .post-title-main { font-size: 21px; }
+
+  .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+}
+
+@media (max-width: 380px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-grid { grid-template-columns: 1fr; }
+}
+]]></b:skin>
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class='topbar'>
+    Nadu Shops-এ স&#2509;ব&#2494;গতম | স&#2494;র&#2494; ব&#2494;&#2434;ল&#2494;দ&#2503;শ&#2503; অনল&#2494;ইন ক&#2503;ন&#2494;ক&#2494;ট&#2494;
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class='nav-container'>
+      <a class='logo' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+
+      <ul class='nav-menu'>
+        <li><a expr:href='data:blog.homepageUrl'>হ&#2507;ম</a></li>
+        <li><a href='/search/label/পোশাক'>প&#2507;শ&#2494;ক</a></li>
+        <li><a href='/search/label/জুতা'>জ&#2497;ত&#2494;</a></li>
+        <li><a href='/search/label/ঘড়ি'>ঘড&#2492;&#2495;</a></li>
+        <li><a href='/search/label/ব্যাগ'>ব&#2509;য&#2494;গ</a></li>
+        <li><a href='/p/contact.html'>য&#2507;গ&#2494;য&#2507;গ</a></li>
+      </ul>
+
+      <div class='header-actions'>
+        <button class='action-btn' title='Wishlist' type='button'>&#9825;<span class='badge-count' id='wishlist-count'>0</span></button>
+        <button class='action-btn' title='Cart' type='button'>🛒<span class='badge-count' id='cart-count'>0</span></button>
+        <form action='/search' class='search-box' method='get'>
+          <input class='search' name='q' placeholder='পণ্য খুঁজুন...' required='required' type='text'/>
+          <button class='search-btn' type='submit'>Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner (Homepage Only) -->
+  <b:if cond='data:view.isHomepage'>
+    <div class='hero'>
+      <div class='hero-inner'>
+        <h1>আপন&#2494;র পছন&#2509;দ&#2503;র ক&#2503;ন&#2494;ক&#2494;ট&#2494; এখন সহজ</h1>
+        <p>
+          Nadu Shops-এ প&#2494;ব&#2503;ন আপন&#2494;র পছন&#2509;দ&#2503;র সব পণ&#2509;য&#2404; স&#2494;শ&#2509;রয&#2492;&#2496; দ&#2494;ম&#2503; পছন&#2509;দ&#2503;র পণ&#2509;য ক&#2495;ন&#2497;ন ঘর&#2503; বস&#2503;ই&#2404;
+        </p>
+        <a class='btn' href='#shop-section'>এখনই ক&#2503;ন&#2494;ক&#2494;ট&#2494; কর&#2497;ন</a>
+      </div>
+    </div>
+  </b:if>
+
+  <!-- Categories Section (Visible on PC + Mobile) -->
+  <b:if cond='not data:view.isSingleItem'>
+    <div class='categories-section'>
+      <h2 class='section-title'>পণ&#2509;য&#2503;র ক&#2509;য&#2494;ট&#2494;গর&#2495;</h2>
+      <div class='categories-grid'>
+        <a class='category-card' href='/search/label/পোশাক'>
+          <span>👕</span>
+          <h3>প&#2507;শ&#2494;ক</h3>
+        </a>
+        <a class='category-card' href='/search/label/ঘড়ি'>
+          <span>&#8986;</span>
+          <h3>ঘড&#2492;&#2495;</h3>
+        </a>
+        <a class='category-card' href='/search/label/ব্যাগ'>
+          <span>🎒</span>
+          <h3>ব&#2509;য&#2494;গ</h3>
+        </a>
+        <a class='category-card' href='/search/label/জুতা'>
+          <span>👟</span>
+          <h3>জ&#2497;ত&#2494;</h3>
+        </a>
+        <a class='category-card' href='/search/label/ইলেকট্রনিক্স'>
+          <span>📱</span>
+          <h3>ইল&#2503;কট&#2509;রন&#2495;ক&#2509;স</h3>
+        </a>
+        <a class='category-card' href='/search/label/স্কিনকেয়ার'>
+          <span>&#10024;</span>
+          <h3>স&#2509;ক&#2495;নক&#2503;য&#2492;&#2494;র</h3>
+        </a>
+        <a class='category-card' href='/search/label/হোম ডেকোর'>
+          <span>🏠</span>
+          <h3>হ&#2507;ম ড&#2503;ক&#2507;র</h3>
+        </a>
+        <a class='category-card' href='/search/label/অ্যাক্সেসরিজ'>
+          <span>👜</span>
+          <h3>অ&#2509;য&#2494;ক&#2509;স&#2503;সর&#2495;জ</h3>
+        </a>
+      </div>
+    </div>
+  </b:if>
+
+  <!-- Main Content & Blogger Post Loop -->
+  <div class='container' id='shop-section'>
+    <b:section class='main-content' id='main-content' showaddelement='yes'>
+      <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='false'>
+        <b:widget-settings>
+          <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+          <b:widget-setting name='display'>LIST</b:widget-setting>
+          <b:widget-setting name='selectedLabelsList'/>
+          <b:widget-setting name='showType'>ALL</b:widget-setting>
+          <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='this'>
+          <b:include name='widget-title'/>
+          <b:include name='content'/>
+        </b:includable>
+        <b:includable id='cloud'>
+          <b:loop values='data:labels' var='label'>
+            <span class='label-size'>
+              <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize'/>
+              <a class='label-name' expr:href='data:label.url'>
+                <data:label.name/>
+                <b:if cond='data:this.showFreqNumbers'>
+                  <span class='label-count'><data:label.count/></span>
+                </b:if>
+              </a>
+            </span>
+          </b:loop>
+        </b:includable>
+        <b:includable id='content'>
+          <div class='widget-content'>
+            <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;'/>
+            <b:include cond='data:this.display == &quot;list&quot;' name='list'/>
+            <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud'/>
+          </div>
+        </b:includable>
+        <b:includable id='list'>
+          <ul>
+            <b:loop values='data:labels' var='label'>
+              <li>
+                <a class='label-name' expr:href='data:label.url'>
+                  <data:label.name/>
+                  <b:if cond='data:this.showFreqNumbers'>
+                    <span class='label-count'><data:label.count/></span>
+                  </b:if>
+                </a>
+              </li>
+            </b:loop>
+          </ul>
+        </b:includable>
+      </b:widget>
+      <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+          <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+          <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+          <b:widget-setting name='showAuthor'>false</b:widget-setting>
+          <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+          <b:widget-setting name='reactionsLabel'/>
+          <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+          <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+          <b:widget-setting name='showLabels'>true</b:widget-setting>
+          <b:widget-setting name='showLocation'>false</b:widget-setting>
+          <b:widget-setting name='showTimestamp'>false</b:widget-setting>
+          <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+          <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+          <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+          <b:widget-setting name='showReactions'>false</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <!-- MULTIPLE ITEMS VIEW (Home, Category Label, Search Results, Archive) -->
+          <b:if cond='data:view.isMultipleItems'>
+            <b:if cond='data:view.isLabelSearch'>
+              <h2 class='section-title'>ক&#2509;য&#2494;ট&#2494;গর&#2495;: <data:blog.searchLabel/></h2>
+            <b:elseif cond='data:view.isSearch'/>
+              <h2 class='section-title'>অন&#2497;সন&#2509;ধ&#2494;ন&#2503;র ফল&#2494;ফল: <data:blog.searchQuery/></h2>
+            <b:else/>
+              <h2 class='section-title'>সর&#2509;বশ&#2503;ষ পণ&#2509;যসম&#2498;হ</h2>
+            </b:if>
+
+            <b:if cond='data:posts.empty'>
+              <div class='empty-box'>
+                <p><strong>এই ম&#2497;হ&#2498;র&#2509;ত&#2503; ক&#2507;ন&#2507; পণ&#2509;য প&#2494;ওয&#2492;&#2494; য&#2494;য&#2492;ন&#2495;&#2404;</strong></p>
+                <p style='margin-top:6px;font-size:14px;'>নত&#2497;ন পণ&#2509;য প&#2507;স&#2509;ট কর&#2494;র সময় ছব&#2495;, পণ&#2509;য&#2503;র ন&#2494;ম, দ&#2494;ম ও সঠ&#2495;ক ক&#2509;য&#2494;ট&#2494;গর&#2495; Label য&#2497;ক&#2509;ত কর&#2497;ন&#2404;</p>
+              </div>
+            <b:else/>
+              <div class='product-grid'>
+                <b:loop values='data:posts' var='post'>
+                  <div class='product-card' expr:data-snippet='data:post.snippet' expr:data-title='data:post.title' expr:data-url='data:post.url'>
+                    <a class='product-thumb-link' expr:href='data:post.url'>
+                      <b:if cond='data:post.featuredImage'>
+                        <img class='product-thumb' expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                      <b:else/>
+                        <img class='product-thumb' expr:alt='data:post.title' src='https://placehold.co/400x300/f2f6f2/16834f?text=Nadu+Shops'/>
+                      </b:if>
+                    </a>
+
+                    <div class='product-info'>
+                      <b:if cond='data:post.labels'>
+                        <div class='product-labels'>
+                          <b:loop values='data:post.labels' var='label'>
+                            <a class='product-badge' expr:href='data:label.url'><data:label.name/></a>
+                          </b:loop>
+                        </div>
+                      </b:if>
+
+                      <a class='product-title' expr:href='data:post.url'><data:post.title/></a>
+                      <div class='product-price js-card-price'/>
+
+                      <div class='card-actions'>
+                        <a class='card-btn btn-details' expr:href='data:post.url'>ব&#2495;স&#2509;ত&#2494;র&#2495;ত</a>
+                        <a class='card-btn btn-buy js-wa-order' expr:data-title='data:post.title' expr:data-url='data:post.url' href='#' rel='noopener noreferrer' target='_blank'>WhatsApp অর&#2509;ড&#2494;র</a>
+                      </div>
+                    </div>
+                  </div>
+                </b:loop>
+              </div>
+            </b:if>
+
+            <b:if cond='data:newerPageUrl or data:olderPageUrl'>
+              <div class='pager'>
+                <b:if cond='data:newerPageUrl'>
+                  <a expr:href='data:newerPageUrl'>&#8592; নত&#2497;ন পণ&#2509;য</a>
+                </b:if>
+                <b:if cond='data:olderPageUrl'>
+                  <a expr:href='data:olderPageUrl'>প&#2497;র&#2507;ন&#2507; পণ&#2509;য &#8594;</a>
+                </b:if>
+              </div>
+            </b:if>
+
+          <!-- INDIVIDUAL POST / PRODUCT DETAILS PAGE VIEW -->
+          <b:else/>
+            <b:loop values='data:posts' var='post'>
+              <div class='post-container js-detail-box' expr:data-title='data:post.title' expr:data-url='data:post.url'>
+                <b:if cond='data:view.isPost'>
+                  <div class='post-detail-top'>
+                    <div>
+                      <b:if cond='data:post.featuredImage'>
+                        <img class='post-detail-img' expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                      <b:else/>
+                        <img class='post-detail-img' expr:alt='data:post.title' src='https://placehold.co/600x450/f2f6f2/16834f?text=Nadu+Shops'/>
+                      </b:if>
+                    </div>
+                    <div>
+                      <b:if cond='data:post.labels'>
+                        <div class='product-labels'>
+                          <b:loop values='data:post.labels' var='label'>
+                            <a class='product-badge' expr:href='data:label.url'><data:label.name/></a>
+                          </b:loop>
+                        </div>
+                      </b:if>
+                      <h1 class='post-title-main'><data:post.title/></h1>
+                      <div class='post-detail-price js-detail-price'/>
+                      <div class='post-detail-btns'>
+                        <a class='card-btn btn-buy js-wa-order' expr:data-title='data:post.title' expr:data-url='data:post.url' href='#' rel='noopener noreferrer' style='padding:12px 22px;font-size:15px;' target='_blank'>WhatsApp-এ অর&#2509;ড&#2494;র কর&#2497;ন</a>
+                        <a class='card-btn btn-details' expr:href='data:blog.homepageUrl' style='padding:12px 22px;font-size:15px;'>আরও পণ&#2509;য দ&#2503;খ&#2497;ন</a>
+                      </div>
+                    </div>
+                  </div>
+                  <hr style='border:none;border-top:1px solid #e5e7eb;margin:20px 0;'/>
+                  <h3 style='font-size:18px;margin-bottom:10px;'>পণ&#2509;য&#2503;র ব&#2495;স&#2509;ত&#2494;র&#2495;ত ব&#2495;বরণ</h3>
+                <b:else/>
+                  <h1 class='post-title-main'><data:post.title/></h1>
+                </b:if>
+
+                <div class='post-body'>
+                  <data:post.body/>
+                </div>
+              </div>
+            </b:loop>
+          </b:if>
+        </b:includable>
+        <b:includable id='aboutPostAuthor'/>
+        <b:includable id='addComments'/>
+        <b:includable id='blogThisShare'/>
+        <b:includable id='bylineByName' var='byline'/>
+        <b:includable id='bylineRegion' var='regionItems'/>
+        <b:includable id='commentAuthorAvatar'/>
+        <b:includable id='commentDeleteIcon' var='comment'/>
+        <b:includable id='commentForm' var='post'/>
+        <b:includable id='commentFormIframeSrc' var='post'/>
+        <b:includable id='commentItem' var='comment'/>
+        <b:includable id='commentList' var='comments'/>
+        <b:includable id='commentPicker' var='post'/>
+        <b:includable id='comments' var='post'/>
+        <b:includable id='commentsLink'/>
+        <b:includable id='commentsLinkIframe'/>
+        <b:includable id='commentsTitle'/>
+        <b:includable id='defaultAdUnit'/>
+        <b:includable id='emailPostIcon'/>
+        <b:includable id='facebookShare'/>
+        <b:includable id='feedLinks'/>
+        <b:includable id='feedLinksBody' var='links'/>
+        <b:includable id='footerBylines'/>
+        <b:includable id='googlePlusShare'/>
+        <b:includable id='headerByline'/>
+        <b:includable id='homePageLink'/>
+        <b:includable id='iframeComments' var='post'/>
+        <b:includable id='inlineAd' var='post'/>
+        <b:includable id='linkShare'/>
+        <b:includable id='nextPageLink'/>
+        <b:includable id='otherSharingButton'/>
+        <b:includable id='platformShare'/>
+        <b:includable id='post' var='post'/>
+        <b:includable id='postAuthor'/>
+        <b:includable id='postBody' var='post'/>
+        <b:includable id='postBodySnippet' var='post'/>
+        <b:includable id='postCommentsAndAd' var='post'/>
+        <b:includable id='postCommentsLink'/>
+        <b:includable id='postFooter' var='post'/>
+        <b:includable id='postFooterAuthorProfile' var='post'/>
+        <b:includable id='postHeader' var='post'/>
+        <b:includable id='postJumpLink' var='post'/>
+        <b:includable id='postLabels'/>
+        <b:includable id='postLocation'/>
+        <b:includable id='postMeta' var='post'/>
+        <b:includable id='postMetadataJSONImage'/>
+        <b:includable id='postMetadataJSONPublisher'/>
+        <b:includable id='postPagination'/>
+        <b:includable id='postReactions'/>
+        <b:includable id='postShareButtons'/>
+        <b:includable id='postTimestamp'/>
+        <b:includable id='postTitle' var='post'/>
+        <b:includable id='previousPageLink'/>
+        <b:includable id='sharingButton'/>
+        <b:includable id='sharingButtonContent'/>
+        <b:includable id='sharingButtons'/>
+        <b:includable id='sharingButtonsMenu'/>
+        <b:includable id='sharingPlatformIcon'/>
+        <b:includable id='threadedCommentForm' var='post'/>
+        <b:includable id='threadedCommentJs' var='post'/>
+        <b:includable id='threadedComments' var='post'/>
+        <b:includable id='tooltipCss'/>
+      </b:widget>
+    </b:section>
+
+    <!-- Extra Widget Area -->
+    <div class='sidebar-widgets'>
+      <b:section class='sidebar' id='sidebar-section' name='Sidebar Widgets' showaddelement='yes'/>
+    </div>
+  </div>
+
+  <!-- Green Footer -->
+  <footer>
+    <div class='footer-grid'>
+      <div class='footer-col'>
+        <h3>Nadu Shops</h3>
+        <p>স&#2494;র&#2494; ব&#2494;&#2434;ল&#2494;দ&#2503;শ&#2503; ন&#2495;র&#2509;ভরয&#2507;গ&#2509;য অনল&#2494;ইন ক&#2503;ন&#2494;ক&#2494;ট&#2494;র ঠ&#2495;ক&#2494;ন&#2494;&#2404; স&#2494;শ&#2509;রয&#2492;&#2496; দ&#2494;ম&#2503; পছন&#2509;দ&#2503;র সব পণ&#2509;য ক&#2495;ন&#2497;ন ঘর&#2503; বস&#2503;ই&#2404;</p>
+      </div>
+      <div class='footer-col'>
+        <h3>ক&#2509;য&#2494;ট&#2494;গর&#2495;</h3>
+        <ul class='footer-links'>
+          <li><a href='/search/label/পোশাক'>প&#2507;শ&#2494;ক</a></li>
+          <li><a href='/search/label/জুতা'>জ&#2497;ত&#2494;</a></li>
+          <li><a href='/search/label/ঘড়ি'>ঘড&#2492;&#2495;</a></li>
+          <li><a href='/search/label/ব্যাগ'>ব&#2509;য&#2494;গ</a></li>
+        </ul>
+      </div>
+      <div class='footer-col'>
+        <h3>গ&#2497;র&#2497;ত&#2509;বপ&#2498;র&#2509;ণ ল&#2495;&#2434;ক</h3>
+        <ul class='footer-links'>
+          <li><a expr:href='data:blog.homepageUrl'>হ&#2507;ম</a></li>
+          <li><a href='/p/about.html'>আম&#2494;দ&#2503;র সম&#2509;পর&#2509;ক&#2503;</a></li>
+          <li><a href='/p/contact.html'>য&#2507;গ&#2494;য&#2507;গ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class='footer-bottom'>
+      &#169; Nadu Shops. সর&#2509;বস&#2509;বত&#2509;ব স&#2434;রক&#2509;ষ&#2495;ত&#2404;
+    </div>
+  </footer>
+
+  <!-- Floating Auto-Reply Chat Button & Box -->
+  <button aria-label='Live Chat' class='chat-float-btn' id='chatToggleBtn' type='button'>💬</button>
+
+  <div class='chat-popup' id='chatPopupBox'>
+    <div class='chat-header'>
+      <div>
+        <h4>Nadu Shops স&#2494;প&#2507;র&#2509;ট</h4>
+        <small>স&#2494;ধ&#2494;রণত কয়&#2503;ক ম&#2495;ন&#2495;ট&#2503;র মধ&#2509;য&#2503; উত&#2509;তর দ&#2503;ওয়&#2494; হয়</small>
+      </div>
+      <button class='chat-close' id='chatCloseBtn' type='button'>&#10005;</button>
+    </div>
+
+    <div class='chat-body' id='chatBody'>
+      <div class='chat-msg-bot'>
+        আসস&#2494;ল&#2494;ম&#2497; আল&#2494;ইক&#2497;ম! Nadu Shops-এ স&#2509;ব&#2494;গতম&#2404; ক&#2496;ভ&#2494;ব&#2503; আপন&#2494;ক&#2503; স&#2494;হ&#2494;য&#2509;য করত&#2503; প&#2494;র&#2495;? ন&#2495;চ&#2503; আপন&#2494;র ম&#2503;স&#2503;জ ল&#2495;খ&#2497;ন&#2404;
+      </div>
+    </div>
+
+    <form class='chat-footer' id='chatForm'>
+      <input id='chatInput' placeholder='এখানে মেসেজ লিখুন...' required='required' type='text'/>
+      <button type='submit'>প&#2494;ঠ&#2494;ন</button>
+    </form>
+  </div>
+
+  <script type='text/javascript'>
+  //<![CDATA[
+  (function(){
+    var WA_NUMBER = 'YOUR_WHATSAPP_NUMBER';
+
+    function extractPrice(text){
+      if(!text) return '';
+      var m = text.match(/(?:দাম|মূল্য|প্রাইস|price)\s*[:：\-]?\s*([^\n।]+)/i);
+      if(m && m[1]) return m[1].trim();
+      var t = text.match(/(?:৳|tk\.?|টাকা)\s*\d[\d,০-৯]*|\d[\d,০-৯]*\s*(?:৳|tk\.?|টাকা)/i);
+      return t ? t[0].trim() : '';
+    }
+
+    function makeWaUrl(message){
+      var cleanNum = String(WA_NUMBER || '').replace(/[^\d]/g,'');
+      var encoded = encodeURIComponent(message);
+      return (!cleanNum || cleanNum === 'YOURWHATSAPPNUMBER')
+        ? ('https://wa.me/?text=' + encoded)
+        : ('https://wa.me/' + cleanNum + '?text=' + encoded);
+    }
+
+    // Product Cards Price & WhatsApp Order Link
+    var cards = document.querySelectorAll('.product-card');
+    for(var i = 0; i < cards.length; i++){
+      var card = cards[i];
+      var title = card.getAttribute('data-title') || '';
+      var url = card.getAttribute('data-url') || '';
+      var snip = card.getAttribute('data-snippet') || '';
+      var price = extractPrice(snip);
+      var priceEl = card.querySelector('.js-card-price');
+      if(priceEl && price){
+        priceEl.textContent = price.indexOf('দাম') === 0 ? price : ('দাম: ' + price);
+      }
+      var orderBtn = card.querySelector('.js-wa-order');
+      if(orderBtn){
+        var lines = ['আসসালামু আলাইকুম, আমি এই পণ্যটি অর্ডার করতে চাই:'];
+        if(title) lines.push('পণ্য: ' + title);
+        if(price) lines.push('দাম: ' + price);
+        if(url) lines.push('লিংক: ' + url);
+        orderBtn.setAttribute('href', makeWaUrl(lines.join('\n')));
+      }
+    }
+
+    // Individual Product Page Price & WhatsApp Order Link
+    var detailBox = document.querySelector('.js-detail-box');
+    if(detailBox){
+      var dTitle = detailBox.getAttribute('data-title') || '';
+      var dUrl = detailBox.getAttribute('data-url') || window.location.href;
+      var bodyEl = detailBox.querySelector('.post-body');
+      var dPrice = extractPrice(bodyEl ? bodyEl.innerText : '');
+      var dPriceEl = detailBox.querySelector('.js-detail-price');
+      if(dPriceEl && dPrice){
+        dPriceEl.textContent = dPrice.indexOf('দাম') === 0 ? dPrice : ('দাম: ' + dPrice);
+      }
+      var dBtn = detailBox.querySelector('.js-wa-order');
+      if(dBtn){
+        var dLines = ['আসসালামু আলাইকুম, আমি এই পণ্যটি অর্ডার করতে চাই:'];
+        if(dTitle) dLines.push('পণ্য: ' + dTitle);
+        if(dPrice) dLines.push('দাম: ' + dPrice);
+        if(dUrl) dLines.push('লিংক: ' + dUrl);
+        dBtn.setAttribute('href', makeWaUrl(dLines.join('\n')));
+      }
+    }
+
+    // Floating Auto-Reply Chat
+    var toggleBtn = document.getElementById('chatToggleBtn');
+    var closeBtn = document.getElementById('chatCloseBtn');
+    var popup = document.getElementById('chatPopupBox');
+    var form = document.getElementById('chatForm');
+    var input = document.getElementById('chatInput');
+    var body = document.getElementById('chatBody');
+
+    if(toggleBtn && popup){
+      toggleBtn.addEventListener('click', function(){
+        popup.classList.toggle('open');
+        if(popup.classList.contains('open') && input) input.focus();
+      });
+    }
+    if(closeBtn && popup){
+      closeBtn.addEventListener('click', function(){
+        popup.classList.remove('open');
+      });
+    }
+    if(form && input && body){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var text = input.value.trim();
+        if(!text) return;
+
+        var userBubble = document.createElement('div');
+        userBubble.className = 'chat-msg-user';
+        userBubble.textContent = text;
+        body.appendChild(userBubble);
+        input.value = '';
+        body.scrollTop = body.scrollHeight;
+
+        setTimeout(function(){
+          var botBubble = document.createElement('div');
+          botBubble.className = 'chat-msg-bot';
+          botBubble.textContent = 'ধন্যবাদ! আপনার বার্তাটি নেওয়া হয়েছে। সরাসরি কথা বলতে এখনই WhatsApp-এ যুক্ত করা হচ্ছে...';
+          body.appendChild(botBubble);
+          body.scrollTop = body.scrollHeight;
+
+          setTimeout(function(){
+            window.open(makeWaUrl(text), '_blank');
+          }, 900);
+        }, 500);
+      });
+    }
+  })();
+  //]]>
+  </script>
+</body>
+</html>
