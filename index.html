@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nadu Shops - সারা বাংলাদেশে অনলাইন কেনাকাটা</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    Nadu Shops-এ স্বাগতম | সারা বাংলাদেশে অনলাইন কেনাকাটা
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a class="logo" href="index.html">Nadu Shops</a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="#shop-section">পোশাক</a></li>
+        <li><a href="#shop-section">জুতা</a></li>
+        <li><a href="#shop-section">ঘড়ি</a></li>
+        <li><a href="#shop-section">ব্যাগ</a></li>
+        <li><a href="#contact">যোগাযোগ</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="action-btn" title="Wishlist" type="button">&#9825;<span class="badge-count" id="wishlist-count">0</span></button>
+        <button class="action-btn" title="Cart" type="button">🛒<span class="badge-count" id="cart-count">0</span></button>
+        <form class="search-box" id="searchForm">
+          <input class="search" id="searchInput" name="q" placeholder="পণ্য খুঁজুন..." type="text" />
+          <button class="search-btn" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>আপনার পছন্দের কেনাকাটা এখন সহজ</h1>
+      <p>
+        Nadu Shops-এ পাবেন আপনার পছন্দের সব পণ্য। সাশ্রয়ী দামে পছন্দের পণ্য কিনুন ঘরে বসেই।
+      </p>
+      <a class="btn" href="#shop-section">এখনই কেনাকাটা করুন</a>
+    </div>
+  </div>
+
+  <!-- Categories Section -->
+  <div class="categories-section">
+    <h2 class="section-title">পণ্যের ক্যাটাগরি</h2>
+    <div class="categories-grid">
+      <a class="category-card" href="#shop-section" data-category="পোশাক">
+        <span>👕</span>
+        <h3>পোশাক</h3>
+      </a>
+      <a class="category-card" href="#shop-section" data-category="ঘড়ি">
+        <span>&#8986;</span>
+        <h3>ঘড়ি</h3>
+      </a>
+      <a class="category-card" href="#shop-section" data-category="ব্যাগ">
+        <span>🎒</span>
+        <h3>ব্যাগ</h3>
+      </a>
+      <a class="category-card" href="#shop-section" data-category="জুতা">
+        <span>👟</span>
+        <h3>জুতা</h3>
+      </a>
+      <a class="category-card" href="#shop-section" data-category="ইলেকট্রনিক্স">
+        <span>📱</span>
+        <h3>ইলেকট্রনিক্স</h3>
+      </a>
+      <a class="category-card" href="#shop-section" data-category="স্কিনকেয়ার">
+        <span>&#10024;</span>
+        <h3>স্কিনকেয়ার</h3>
+      </a>
+      <a class="category-card" href="#shop-section" data-category="হোম ডেকোর">
+        <span>🏠</span>
+        <h3>হোম ডেকোর</h3>
+      </a>
+      <a class="category-card" href="#shop-section" data-category="অ্যাক্সেসরিজ">
+        <span>👜</span>
+        <h3>অ্যাক্সেসরিজ</h3>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content & Product Grid -->
+  <div class="container" id="shop-section">
+    <h2 class="section-title" id="productSectionTitle">সর্বশেষ পণ্যসমূহ</h2>
+
+    <div class="product-grid" id="productGrid">
+      <!-- Sample Product 1 -->
+      <div class="product-card" data-category="পোশাক" data-snippet="দাম: ৮৫০ টাকা" data-title="প্রিমিয়াম কটন পাঞ্জাবি" data-url="https://example.com/product-1">
+        <a class="product-thumb-link" href="#product-1">
+          <img alt="প্রিমিয়াম কটন পাঞ্জাবি" class="product-thumb" src="https://placehold.co/400x300/f2f6f2/16834f?text=Panjabi" />
+        </a>
+        <div class="product-info">
+          <div class="product-labels">
+            <a class="product-badge" href="#shop-section">পোশাক</a>
+          </div>
+          <a class="product-title" href="#product-1">প্রিমিয়াম কটন পাঞ্জাবি</a>
+          <div class="product-price js-card-price"></div>
+          <div class="card-actions">
+            <a class="card-btn btn-details" href="#product-1">বিস্তারিত</a>
+            <a class="card-btn btn-buy js-wa-order" data-title="প্রিমিয়াম কটন পাঞ্জাবি" data-url="https://example.com/product-1" href="#" rel="noopener noreferrer" target="_blank">WhatsApp অর্ডার</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample Product 2 -->
+      <div class="product-card" data-category="ঘড়ি" data-snippet="দাম: ১২৫০ টাকা" data-title="স্টাইলিশ লেদার রিস্ট ওয়াচ" data-url="https://example.com/product-2">
+        <a class="product-thumb-link" href="#product-2">
+          <img alt="স্টাইলিশ লেদার রিস্ট ওয়াচ" class="product-thumb" src="https://placehold.co/400x300/f2f6f2/16834f?text=Watch" />
+        </a>
+        <div class="product-info">
+          <div class="product-labels">
+            <a class="product-badge" href="#shop-section">ঘড়ি</a>
+          </div>
+          <a class="product-title" href="#product-2">স্টাইলিশ লেদার রিস্ট ওয়াচ</a>
+          <div class="product-price js-card-price"></div>
+          <div class="card-actions">
+            <a class="card-btn btn-details" href="#product-2">বিস্তারিত</a>
+            <a class="card-btn btn-buy js-wa-order" data-title="স্টাইলিশ লেদার রিস্ট ওয়াচ" data-url="https://example.com/product-2" href="#" rel="noopener noreferrer" target="_blank">WhatsApp অর্ডার</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample Product 3 -->
+      <div class="product-card" data-category="ব্যাগ" data-snippet="দাম: ৯৫০ টাকা" data-title="ট্রাভেল ল্যাপটপ ব্যাকপ্যাক" data-url="https://example.com/product-3">
+        <a class="product-thumb-link" href="#product-3">
+          <img alt="ট্রাভেল ল্যাপটপ ব্যাকপ্যাক" class="product-thumb" src="https://placehold.co/400x300/f2f6f2/16834f?text=Bag" />
+        </a>
+        <div class="product-info">
+          <div class="product-labels">
+            <a class="product-badge" href="#shop-section">ব্যাগ</a>
+          </div>
+          <a class="product-title" href="#product-3">ট্রাভেল ল্যাপটপ ব্যাকপ্যাক</a>
+          <div class="product-price js-card-price"></div>
+          <div class="card-actions">
+            <a class="card-btn btn-details" href="#product-3">বিস্তারিত</a>
+            <a class="card-btn btn-buy js-wa-order" data-title="ট্রাভেল ল্যাপটপ ব্যাকপ্যাক" data-url="https://example.com/product-3" href="#" rel="noopener noreferrer" target="_blank">WhatsApp অর্ডার</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample Product 4 -->
+      <div class="product-card" data-category="জুতা" data-snippet="দাম: ১৪০০ টাকা" data-title="ক্যাজুয়াল স্পোর্টস স্নিকার্স" data-url="https://example.com/product-4">
+        <a class="product-thumb-link" href="#product-4">
+          <img alt="ক্যাজুয়াল স্পোর্টস স্নিকার্স" class="product-thumb" src="https://placehold.co/400x300/f2f6f2/16834f?text=Shoes" />
+        </a>
+        <div class="product-info">
+          <div class="product-labels">
+            <a class="product-badge" href="#shop-section">জুতা</a>
+          </div>
+          <a class="product-title" href="#product-4">ক্যাজুয়াল স্পোর্টস স্নিকার্স</a>
+          <div class="product-price js-card-price"></div>
+          <div class="card-actions">
+            <a class="card-btn btn-details" href="#product-4">বিস্তারিত</a>
+            <a class="card-btn btn-buy js-wa-order" data-title="ক্যাজুয়াল স্পোর্টস স্নিকার্স" data-url="https://example.com/product-4" href="#" rel="noopener noreferrer" target="_blank">WhatsApp অর্ডার</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="empty-box" id="emptyStateBox" style="display: none;">
+      <p><strong>এই মুহূর্তে কোনো পণ্য পাওয়া যায়নি।</strong></p>
+      <p style="margin-top:6px;font-size:14px;">অন্য ক্যাটাগরি বা কীওয়ার্ড দিয়ে আবার চেষ্টা করুন।</p>
+    </div>
+  </div>
+
+  <!-- Green Footer -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Nadu Shops</h3>
+        <p>সারা বাংলাদেশে নির্ভরযোগ্য অনলাইন কেনাকাটার ঠিকানা। সাশ্রয়ী দামে পছন্দের সব পণ্য কিনুন ঘরে বসেই।</p>
+      </div>
+      <div class="footer-col">
+        <h3>ক্যাটাগরি</h3>
+        <ul class="footer-links">
+          <li><a href="#shop-section">পোশাক</a></li>
+          <li><a href="#shop-section">জুতা</a></li>
+          <li><a href="#shop-section">ঘড়ি</a></li>
+          <li><a href="#shop-section">ব্যাগ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>গুরুত্বপূর্ণ লিংক</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">হোম</a></li>
+          <li><a href="#about">আমাদের সম্পর্কে</a></li>
+          <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &#169; Nadu Shops. সর্বস্বত্ব সংরক্ষিত।
+    </div>
+  </footer>
+
+  <!-- Floating Auto-Reply Chat Button & Box -->
+  <button aria-label="Live Chat" class="chat-float-btn" id="chatToggleBtn" type="button">💬</button>
+
+  <div class="chat-popup" id="chatPopupBox">
+    <div class="chat-header">
+      <div>
+        <h4>Nadu Shops সাপোর্ট</h4>
+        <small>সাধারণত কয়েক মিনিটের মধ্যে উত্তর দেওয়া হয়</small>
+      </div>
+      <button class="chat-close" id="chatCloseBtn" type="button">&#10005;</button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg-bot">
+        আসসালামু আলাইকুম! Nadu Shops-এ স্বাগতম। কীভাবে আপনাকে সাহায্য করতে পারি? নিচে আপনার মেসেজ লিখুন।
+      </div>
+    </div>
+
+    <form class="chat-footer" id="chatForm">
+      <input id="chatInput" placeholder="এখানে মেসেজ লিখুন..." required="required" type="text" />
+      <button type="submit">পাঠান</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
